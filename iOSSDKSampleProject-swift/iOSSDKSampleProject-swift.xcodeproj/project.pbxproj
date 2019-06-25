@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5B6046B22C26A86000FEECB /* pikkartAR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B6046A22C26A86000FEECB /* pikkartAR.framework */; };
+		A5B6046D22C26AF4000FEECB /* pikkartARLocalized.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A5B6046C22C26AF4000FEECB /* pikkartARLocalized.bundle */; };
+		A5C86BCA22C11401005A6412 /* 001_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A5C86BC922C11401005A6412 /* 001_small.jpg */; };
 		E114CBB41FEA80E00057F7E7 /* markers.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E114CBB31FEA80E00057F7E7 /* markers.bundle */; };
 		E1A7BACD1FDFE8D100C2329A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A7BACC1FDFE8D100C2329A /* AppDelegate.swift */; };
 		E1A7BACF1FDFE8D100C2329A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A7BACE1FDFE8D100C2329A /* ViewController.swift */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5B6046A22C26A86000FEECB /* pikkartAR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = pikkartAR.framework; sourceTree = "<group>"; };
+		A5B6046C22C26AF4000FEECB /* pikkartARLocalized.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = pikkartARLocalized.bundle; sourceTree = "<group>"; };
+		A5C86BC922C11401005A6412 /* 001_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 001_small.jpg; path = ../../Samples/001_small.jpg; sourceTree = "<group>"; };
 		E114CBB31FEA80E00057F7E7 /* markers.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = markers.bundle; path = ../../Samples/markers.bundle; sourceTree = "<group>"; };
 		E1A7BAC91FDFE8D000C2329A /* iOSSDKSampleProject-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOSSDKSampleProject-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A7BACC1FDFE8D100C2329A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5B6046B22C26A86000FEECB /* pikkartAR.framework in Frameworks */,
 				E1A7BB171FE016FE00C2329A /* SystemConfiguration.framework in Frameworks */,
 				E1A7BB091FDFF25D00C2329A /* libz.tbd in Frameworks */,
 				E1A7BB071FDFF25600C2329A /* libsqlite3.tbd in Frameworks */,
@@ -47,6 +54,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5B6046922C26A86000FEECB /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				A5B6046C22C26AF4000FEECB /* pikkartARLocalized.bundle */,
+				A5B6046A22C26A86000FEECB /* pikkartAR.framework */,
+			);
+			name = shared;
+			path = ../../shared;
+			sourceTree = "<group>";
+		};
 		E1A7BAC01FDFE8D000C2329A = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +84,8 @@
 		E1A7BACB1FDFE8D000C2329A /* iOSSDKSampleProject-swift */ = {
 			isa = PBXGroup;
 			children = (
+				A5B6046922C26A86000FEECB /* shared */,
+				A5C86BC922C11401005A6412 /* 001_small.jpg */,
 				E114CBB31FEA80E00057F7E7 /* markers.bundle */,
 				E1A7BACC1FDFE8D100C2329A /* AppDelegate.swift */,
 				E1A7BACE1FDFE8D100C2329A /* ViewController.swift */,
@@ -151,7 +170,9 @@
 				E1A7BAD71FDFE8D100C2329A /* LaunchScreen.storyboard in Resources */,
 				E1A7BAD41FDFE8D100C2329A /* Assets.xcassets in Resources */,
 				E1A7BAD21FDFE8D100C2329A /* Main.storyboard in Resources */,
+				A5C86BCA22C11401005A6412 /* 001_small.jpg in Resources */,
 				E114CBB41FEA80E00057F7E7 /* markers.bundle in Resources */,
+				A5B6046D22C26AF4000FEECB /* pikkartARLocalized.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,13 +325,16 @@
 				DEVELOPMENT_TEAM = 3G6WA29NLC;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../../../",
-					"$(PROJECT_DIR)/iOSSDKSampleProject-swift",
+					"$(PROJECT_DIR)/../shared",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "iOSSDKSampleProject-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-lstdc++";
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pikkart.trial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c7181402-a56c-4e4a-822c-c8537b729def";
@@ -318,7 +342,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "iOSSDKSampleProject-swift/iOSSDKSampleProject-swift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = arm64;
 			};
 			name = Debug;
 		};
@@ -330,13 +354,16 @@
 				DEVELOPMENT_TEAM = 3G6WA29NLC;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../../../",
-					"$(PROJECT_DIR)/iOSSDKSampleProject-swift",
+					"$(PROJECT_DIR)/../shared",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "iOSSDKSampleProject-swift/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-lstdc++";
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pikkart.trial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c7181402-a56c-4e4a-822c-c8537b729def";
@@ -344,7 +371,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "iOSSDKSampleProject-swift/iOSSDKSampleProject-swift-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = arm64;
 			};
 			name = Release;
 		};
